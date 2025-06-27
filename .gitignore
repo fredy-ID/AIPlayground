@@ -1,0 +1,110 @@
+# Fichiers de configuration spécifiques à l'OS
+.DS_Store # macOS
+Thumbs.db # Windows
+ehthumbs.db # Windows
+Desktop.ini # Windows
+
+# Fichiers et dossiers de cache
+*.log
+*.tmp
+*.bak
+*.swp # Fichiers d'échange Vim
+
+# Dépendances de gestion de paquets Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.tox/
+.mypy_cache/
+.ipynb_checkpoints/ # Jupyter Notebook checkpoints
+
+# Environnements virtuels
+.venv/
+venv/
+env/
+/conda/ # Pour les environnements Conda s'ils sont créés à la racine
+.conda/
+mambaforge/
+
+# Données brutes et traitées
+# C'est l'une des sections les plus importantes pour les projets d'IA.
+# Les jeux de données sont souvent trop volumineux pour être versionnés par Git.
+# Utilisez Git LFS si vous devez versionner de gros fichiers de données ou modèles.
+# Sinon, ignorez-les et gérez-les via un stockage externe (cloud, partagé).
+/data/ # Dépôt de données brutes ou traitées
+/datasets/
+/raw_data/
+/processed_data/
+
+# Modèles entraînés
+# Les modèles entraînés peuvent être très volumineux et changent souvent.
+# Utilisez Git LFS si vous avez besoin de les versionner.
+# Sinon, sauvegardez-les sur un stockage distant (S3, GCS, etc.).
+/models/
+*.pt # PyTorch
+*.pth # PyTorch
+*.h5 # Keras / TensorFlow HDF5
+*.keras # Keras
+*.tf # TensorFlow SavedModel (peut être un dossier)
+*.ckpt # TensorFlow checkpoints
+*.onnx # ONNX models
+*.pkl # Pickle files (souvent utilisés pour sérialiser des modèles ou des objets Python)
+*.joblib # Joblib files (souvent utilisés pour sérialiser des modèles Scikit-learn)
+*.bin # Binary files (souvent pour Hugging Face Transformers)
+
+# Fichiers de résultats d'expériences / sorties
+/results/
+/outputs/
+/experiments/
+figures/
+plots/
+*.png # Souvent des plots générés
+*.jpg
+*.csv # Souvent des logs d'entraînement ou des résultats
+*.tsv
+*.json
+tensorboard/ # Logs de TensorBoard
+runs/ # Logs de MLflow ou autres gestionnaires d'expériences
+
+# Rapports et documentation générés
+/docs/build/ # Si vous générez des docs (Sphinx, MkDocs)
+*.html # Pages HTML générées
+
+# Fichiers de configuration et d'environnement sensibles
+.env # Fichier d'environnement local (très important !)
+.env.*.local
+secrets.yaml
+config.local.yaml # Exemple de fichier de config local
+
+# Fichiers spécifiques aux IDE (Environnements de Développement Intégrés)
+.idea/ # PyCharm, IntelliJ IDEA
+.vscode/ # VS Code (peut être inclus si vous partagez des configurations spécifiques)
+*.iml # IntelliJ IDEA
+.project # Eclipse
+.settings/ # Eclipse
+.classpath # Eclipse
+*.sublime-project # Sublime Text
+*.sublime-lime # Sublime Text
+
+# Fichiers de compilation (si vous compilez du code C++/CUDA)
+*.o
+*.so
+*.dll
+*.exe
+
+# Fichiers Docker
+.dockerignore # Le fichier lui-même peut être ignoré si vous avez un .gitignore global
+/target/ # Dossiers de build de Java/Maven (si lié à un backend)
+
+# Jupyter Notebook spécifiques à l'utilisateur (si non versionnés)
+# Vous pouvez ignorer des notebooks qui sont juste des brouillons ou des tests
+# sans intérêt pour le dépôt principal.
+my_scratchpad.ipynb
+temp_analysis.ipynb
+
+# Ajoutez ici d'autres fichiers ou dossiers spécifiques à votre projet ou à vos outils d'IA.
+# Par exemple, si vous utilisez DVC (Data Version Control) ou MLflow pour les données/modèles,
+# vous pouvez ignorer leurs caches internes.
+.dvc/
+.dvcignore
+mlruns/ # Logs de MLflow si non dans 'runs/'
